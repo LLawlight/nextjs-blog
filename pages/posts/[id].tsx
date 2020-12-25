@@ -18,6 +18,10 @@ export default function Post({
     <Layout>
       <Head>
         <title>{postData.title}</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/styles/github.min.css"
+        ></link>
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
