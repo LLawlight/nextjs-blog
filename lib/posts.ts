@@ -1,8 +1,16 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import remark from "remark";
-import html from "remark-html";
+import marked from "marked";
+import hljs from "highlight.js";
+
+marked.setOptions({
+  highlight: function (code, language) {
+    const validLanguage = hljs.getLanguage(language) ? language : "plaintext";
+    return hljs.highlight(validLanguage, code).value;
+  },
+  langPrefix: "hljs language-",
+});
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -41,7 +49,7 @@ export function getAllPostIds() {
   return fileNames.map((fileName) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, ""),
+        id: encodeURIComponent(fileName.replace(/\.md$/, "")),
       },
     };
   });
@@ -55,9 +63,7 @@ export async function getPostData(id: string) {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
+  const processedContent = marked(matterResult.content);
   const contentHtml = processedContent.toString();
 
   // Combine the data with the id and contentHtml
