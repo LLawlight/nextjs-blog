@@ -1,25 +1,30 @@
 .container {
-  max-width: 36rem;
+  max-width: 768px;
   padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  margin: 3rem auto;
 }
 
-.header {
+.header{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.headerImage {
-  width: 6rem;
-  height: 6rem;
-}
-
-.headerHomeImage {
-  width: 8rem;
-  height: 8rem;
-}
-
 .backToHome {
   margin: 3rem 0 0;
+}
+
+.footer {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer > div + div {
+  margin-top: 10px;
+}
+
+.footerHeart {
+  color: red;
 }

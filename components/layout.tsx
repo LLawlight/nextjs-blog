@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const name = "L·Lawliet";
 export const siteTitle = "Wammy's House";
@@ -23,10 +24,13 @@ export default function Layout({
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            <Image
               src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              className={utilStyles.borderCircle}
               alt={name}
+              width={128}
+              height={128}
+              objectFit="cover"
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -34,10 +38,13 @@ export default function Layout({
           <>
             <Link href="/">
               <a>
-                <img
+                <Image
                   src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                  className={utilStyles.borderCircle}
                   alt={name}
+                  width={64}
+                  height={64}
+                  objectFit="cover"
                 />
               </a>
             </Link>
@@ -57,6 +64,22 @@ export default function Layout({
           </Link>
         </div>
       )}
+      <footer className={styles.footer}>
+        <div>
+          Made with <span className={styles.footerHeart}>❤</span> by L·Lawliet |{" "}
+          <Link href="/friends">友人帐</Link>
+        </div>
+        <div>
+          © 1993 - {new Date().getFullYear()} |{" "}
+          <a
+            href="https://beian.miit.gov.cn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            浙ICP备18031309号
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
