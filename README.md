@@ -8,4 +8,6 @@
 - [x] 配置ESLint
 - [x] 配置commitlint
 - [x] 配置markdown样式
-- [ ] 迁移友链
+- [x] 添加Google Analytics
+- [x] 迁移友链
+- [ ] 支持PWA
