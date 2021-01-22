@@ -102,7 +102,7 @@ export default function Friends() {
                 href={friend.link}
                 target="__blank"
                 key={friend.name}
-                rel="noopener noreferrer"
+                rel="noopener"
               >
                 <img
                   src={friend.avatar}
