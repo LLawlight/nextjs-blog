@@ -5,15 +5,18 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
+import { getSortedPPTData } from "../lib/ppt";
 
 export default function Home({
   allPostsData,
+  allPPTData,
 }: {
   allPostsData: {
     date: string;
     title: string;
     id: string;
   }[];
+  allPPTData: any;
 }) {
   return (
     <Layout home>
@@ -36,15 +39,33 @@ export default function Home({
           ))}
         </ul>
       </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>PPT</h2>
+        <ul className={utilStyles.list}>
+          {allPPTData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/ppt/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
+  const allPPTData = getSortedPPTData();
   return {
     props: {
       allPostsData,
+      allPPTData,
     },
   };
 };
