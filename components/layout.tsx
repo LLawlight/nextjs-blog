@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const name = "L·Lawliet";
-export const siteTitle = "Wammy's House";
+export const siteTitle = "小翔日记";
 
 export default function Layout({
   children,
