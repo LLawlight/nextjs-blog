@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const name = "L·Lawliet";
-export const siteTitle = "个人技术分享";
+export const siteTitle = "小翔日记";
 
 export default function Layout({
   children,
@@ -76,7 +76,7 @@ export default function Layout({
             target="_blank"
             rel="noopener noreferrer"
           >
-            浙ICP备18031309号
+            浙ICP备18031309号-1
           </a>
         </div>
       </footer>
