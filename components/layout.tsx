@@ -4,8 +4,8 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const name = "L·Lawliet";
-export const siteTitle = "小翔日记";
+const name = "天道总司";
+export const siteTitle = "天道寺";
 
 export default function Layout({
   children,
