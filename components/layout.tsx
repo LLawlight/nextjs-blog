@@ -20,6 +20,10 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="赵宇翔的个人网站" />
         <meta name="og:title" content={siteTitle} />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+        ></meta>
       </Head>
       <header className={styles.header}>
         {home ? (
@@ -32,7 +36,7 @@ export default function Layout({
               height={128}
               objectFit="cover"
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
         ) : (
           <>
@@ -50,7 +54,7 @@ export default function Layout({
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={utilStyles.colorInherit}>{siteTitle}</a>
               </Link>
             </h2>
           </>
