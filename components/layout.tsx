@@ -67,7 +67,8 @@ export default function Layout({
       <footer className={styles.footer}>
         <div>
           Made with <span className={styles.footerHeart}>❤</span> by L·Lawliet |{" "}
-          <Link href="/friends">友人帐</Link>
+          <Link href="/friends">友人帐</Link> |{" "}
+          <Link href="/recommend">内推</Link>
         </div>
         <div>
           © 1993 - {new Date().getFullYear()} |{" "}
