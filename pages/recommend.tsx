@@ -19,7 +19,10 @@ export default function Recommend({ data }) {
             <div className="tags">
               {item.city} | {item.type}
             </div>
-            <details className="content">{item.content}</details>
+            <details className="content">
+              <summary>岗位要求</summary>
+              {item.content}
+            </details>
           </div>
         );
       })}
@@ -47,13 +50,17 @@ export default function Recommend({ data }) {
             line-height: 28px;
             white-space: pre-wrap;
           }
+
+          summary {
+            outline: none;
+          }
         `}
       </style>
     </Layout>
   );
 }
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async () => {
   const res = await fetch("https://job.getui.com/data/recruit/2020/job/list", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -65,6 +72,8 @@ export const getServerSideProps = async ({ params }) => {
   const data = await res.json();
 
   return {
-    props: { data: data?.data?.list || [] },
+    props: {
+      data: data?.data?.list || [],
+    },
   };
 };
