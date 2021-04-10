@@ -6,7 +6,7 @@ export default (_: NextApiRequest, res: NextApiResponse) => {
     data: {
       user: {
         roles: ["admin"],
-        name: "vue-typescript-vite-admin",
+        name: "vite-vue-ts-admin",
         avatar:
           "https://zhaoyuxiang.cn/_next/image?url=%2Fimages%2Fprofile.jpg&w=256&q=75",
         introduction: "https://zhaoyuxiang.cn",
