@@ -1,10 +1,27 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default (_: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({
-    code: 20000,
-    data: {
-      accessToken: "vite-vue-ts-admin-template_token",
-    },
-  });
+const tokens = {
+  admin: {
+    token: "admin-token",
+  },
+  editor: {
+    token: "editor-token",
+  },
+};
+
+export default (req: NextApiRequest, res: NextApiResponse) => {
+  const { username } = req.body;
+  const token = tokens[username];
+
+  let data = token
+    ? {
+        code: 20000,
+        data: token,
+      }
+    : {
+        code: 60204,
+        message: "Account and password are incorrect.",
+      };
+
+  res.status(200).json(data);
 };
