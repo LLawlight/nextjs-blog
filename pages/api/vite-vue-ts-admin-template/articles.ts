@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import checkLogged from "../../utils/middlewares/checkLogged";
 const Mock = require("mockjs");
 
 const data = Mock.mock({
@@ -14,14 +15,20 @@ const data = Mock.mock({
   ],
 });
 
-export default (_: NextApiRequest, res: NextApiResponse) => {
-  const items = data.items;
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    await checkLogged(req, res);
 
-  res.status(200).json({
-    code: 20000,
-    data: {
-      total: items.length,
-      items: items,
-    },
-  });
+    const items = data.items;
+
+    res.status(200).json({
+      errcode: "success",
+      errmsg: "成功",
+      errno: 0,
+      data: {
+        total: items.length,
+        items: items,
+      },
+    });
+  } catch (e) {}
 };

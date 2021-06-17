@@ -1,37 +1,37 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import checkLogged from "../../../utils/middlewares/checkLogged";
 
 const users = {
   "admin-token": {
     roles: ["admin"],
     introduction: "I am a super administrator",
     avatar:
-      "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+      "https://zhaoyuxiang.cn/_next/image?url=%2Fimages%2Fprofile.jpg&w=256&q=75",
     name: "Super Admin",
   },
   "editor-token": {
     roles: ["editor"],
     introduction: "I am an editor",
     avatar:
-      "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+      "https://zhaoyuxiang.cn/_next/image?url=%2Fimages%2Fprofile.jpg&w=256&q=75",
     name: "Normal Editor",
   },
 };
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  const token = req.headers["x-access-token"] as string;
-  const info = users[token];
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    await checkLogged(req, res);
 
-  let data = info
-    ? {
-        code: 20000,
-        data: {
-          user: info,
-        },
-      }
-    : {
-        code: 50008,
-        message: "Login failed, unable to get user details.",
-      };
+    const token = req.cookies["JSESSIONID"] as string;
+    const info = users[token];
 
-  res.status(200).json(data);
+    res.status(200).json({
+      errcode: "success",
+      errmsg: "成功",
+      errno: 0,
+      data: {
+        user: info,
+      },
+    });
+  } catch (e) {}
 };
