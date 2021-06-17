@@ -1,5 +1,5 @@
 export default (req, res) => {
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     const token = req.cookies["JSESSIONID"] as string;
 
     if (["admin-token", "editor-token"].indexOf(token) > -1) {

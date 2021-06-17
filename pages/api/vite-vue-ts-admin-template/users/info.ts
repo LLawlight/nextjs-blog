@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import checkLogged from "../../../utils/middlewares/checkLogged";
+import checkLogged from "../../../../utils/middlewares/checkLogged";
 
 const users = {
   "admin-token": {
