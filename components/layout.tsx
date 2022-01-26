@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const name = "天道总司";
-export const siteTitle = "天道寺";
+export const siteTitle = "华米兹之家";
 
 export default function Layout({
   children,
