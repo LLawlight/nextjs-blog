@@ -39,7 +39,7 @@ export default function Home({
           ))}
         </ul>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>PPT</h2>
         <ul className={utilStyles.list}>
           {allPPTData.map(({ id, date, title }) => (
@@ -54,7 +54,7 @@ export default function Home({
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </Layout>
   );
 }
