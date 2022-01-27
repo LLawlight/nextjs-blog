@@ -61,14 +61,17 @@ export default function Recommend({ data }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://job.getui.com/data/recruit/2020/job/list", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      pageNum: 1,
-      pageSize: 999,
-    }),
-  });
+  const res = await fetch(
+    "https://job.getui.com/data/recruit/social/2021/job/list",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pageNum: 1,
+        pageSize: 999,
+      }),
+    }
+  );
   const data = await res.json();
 
   return {
