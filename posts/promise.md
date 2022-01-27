@@ -30,7 +30,7 @@ date: '2022-01-26'
 
 ### 实现代码
 
-```
+```js
 function Promise(executor) {
   // 2.1. Promise 的状态
   // Promise 必须处于以下三种状态之一：pending，fulfilled 或者 rejected。
@@ -96,7 +96,7 @@ function Promise(executor) {
 
 ### 实现代码
 
-```
+```js
 // 2.2. then 方法
 // 一个 promise 必须提供一个 then 方法来访问其当前值或最终值或 rejected 的原因。
 // 一个 promise 的 then 方法接受两个参数：
@@ -216,7 +216,7 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 
 ### 实现代码
 
-```
+```js
 // 2.3. Promise 处理程序
 // Promise 处理程序是一个将 promise 和 value 作为输入的抽象操作，我们将其表示为 [[Resolve]](promise, x)。
 // 补充说明：这里我们将 resolve 和 reject 也传入进来，因为后续要根据不同的逻辑对 promise 执行 fulfill 或 reject 操作。
@@ -297,7 +297,7 @@ function promiseResolutionProcedure(promise2, x, resolve, reject) {
 
 ### 完整代码
 
-```
+```js
 function Promise(executor) {
   this.status = "pending";
   this.onFulfilledCallback = [];
