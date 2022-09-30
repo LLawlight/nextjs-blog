@@ -6,6 +6,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
 import { getSortedPPTData } from "../lib/ppt";
+import OpenScreen from "../components/open-screen";
 
 export default function Home({
   allPostsData,
@@ -23,6 +24,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <OpenScreen />
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
