@@ -1,10 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { siteTitle } from "../components/layout";
 
+let hasShown = false;
+
 export default function OpenScreen() {
+  const [shouldShow] = useState(!hasShown);
+
   useEffect(() => {
-    render();
-  });
+    if (shouldShow) {
+      render();
+      hasShown = true;
+    }
+  }, [shouldShow]);
+
+  if (!shouldShow) {
+    return null;
+  }
 
   return (
     <div className="open-screen">
