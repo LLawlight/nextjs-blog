@@ -16,6 +16,16 @@ class MyDocument extends Document {
     return (
       <Html lang="zh">
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+            rel="stylesheet"
+          />
           {/* Global site tag (gtag.js) - Google Analytics */}
           {process.env.NODE_ENV === "production" && (
             <>

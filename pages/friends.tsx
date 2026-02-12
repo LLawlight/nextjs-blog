@@ -121,32 +121,63 @@ export default function Friends() {
       </div>
       <style jsx>{`
         .friends {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 1.5rem;
+          margin-top: 2rem;
         }
 
         a {
-          width: 50%;
           display: flex;
-          margin-bottom: 20px;
+          align-items: center;
+          padding: 1.25rem;
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-bottom: none !important;
+          text-decoration: none !important;
+          margin-bottom: 0;
+          width: 100%;
+        }
+
+        a:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+          border-bottom: none !important;
         }
 
         img {
+          width: 60px;
+          height: 60px;
           object-fit: cover;
           border-radius: 50%;
-          margin-right: 10px;
+          margin-right: 1rem;
+          border: 2px solid #fff;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+          flex-shrink: 0;
         }
 
         .name {
-          color: black;
-          font-size: 18px;
+          color: #333;
+          font-size: 1rem;
           font-weight: 700;
+          margin-bottom: 0.25rem;
+          transition: color 0.2s;
+        }
+
+        a:hover .name {
+          color: #c0392b;
         }
 
         .intro {
-          font-size: 14px;
-          color: #646464;
+          font-size: 0.85rem;
+          color: #888;
+          line-height: 1.4;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       `}</style>
     </Layout>
