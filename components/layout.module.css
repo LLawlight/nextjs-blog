@@ -38,9 +38,21 @@
   color: var(--color-text-secondary);
   text-align: center;
   margin-top: 6rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
+  padding-top: 0;
+  border-top: none;
   font-family: var(--font-sans);
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-border);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
 .footer a {
