@@ -28,27 +28,27 @@ export default function Layout({
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            <img
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
               alt={name}
               width={128}
               height={128}
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
             />
             <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
         ) : (
           <>
             <Link href="/">
-              <a>
-                <Image
+              <a className={styles.avatarLink}>
+                <img
                   src="/images/profile.jpg"
                   className={utilStyles.borderCircle}
                   alt={name}
                   width={64}
                   height={64}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
               </a>
             </Link>
