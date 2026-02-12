@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
+import RecommendEntry from "../components/recommend-entry";
 
 export default function Friends() {
   return (
@@ -9,6 +10,8 @@ export default function Friends() {
         <title>友人帐</title>
       </Head>
       <div>
+        {/* 醒目的内推入口 */}
+        <RecommendEntry />
         <h2 className={utilStyles.headingMd}>友人帐</h2>
         <div className="friends">
           {[

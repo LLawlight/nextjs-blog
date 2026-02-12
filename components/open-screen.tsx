@@ -34,6 +34,7 @@ export default function OpenScreen() {
           flex-direction: column;
           justify-content: space-evenly;
           align-items: center;
+          z-index: 9999;
         }
 
         .logo {
