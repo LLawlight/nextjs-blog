@@ -211,6 +211,8 @@ export default function Recommend({ data }) {
           const getPriority = (type: string) => {
             if (type.includes("技术")) return 1;
             if (type.includes("产品")) return 2;
+            if (type.includes("设计")) return 3;
+            if (type.includes("运营")) return 4;
             if (type.includes("销售")) return 99;
             return 50;
           };
