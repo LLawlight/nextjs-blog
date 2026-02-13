@@ -8,7 +8,10 @@ export default function RecommendEntry() {
           <a className="recommend-card">
             <div className="recommend-icon">🚀</div>
             <div className="recommend-content">
-              <h3 className="recommend-title">加入我们 · 每日互动（个推）</h3>
+              <h3 className="recommend-title">
+                加入我们 · 每日互动
+                <span className="brand-suffix">（个推）</span>
+              </h3>
               <p className="recommend-desc">
                 寻找优秀的你，共同探索数据智能的无限可能。技术、产品、销售多岗位热招中！
               </p>
@@ -93,6 +96,32 @@ export default function RecommendEntry() {
         .recommend-card:hover .recommend-arrow {
           transform: translateX(6px);
           opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+          .recommend-section {
+            margin: 1.5rem 0 3rem;
+          }
+          .recommend-card {
+            padding: 1.25rem;
+          }
+          .recommend-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+          }
+          .recommend-title {
+            font-size: 1.1rem;
+          }
+          .brand-suffix {
+            display: none;
+          }
+          .recommend-desc {
+            font-size: 0.85rem;
+          }
+          .recommend-arrow {
+            font-size: 1.2rem;
+            margin-left: 0.75rem;
+          }
         }
       `}</style>
     </>
